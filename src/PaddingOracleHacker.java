@@ -238,15 +238,15 @@ public class PaddingOracleHacker {
 	
 	public static void main(String[] args) throws IOException{
 		
-		BruteForceHacker hacker = new BruteForceHacker();
+		PaddingOracleHacker hacker = new PaddingOracleHacker(); 
 		hacker.setAddress("http://localhost:8080/PaddingOracleServer/decrypt.jsp");
 		hacker.setParamName("msg");
 		hacker.setBlockSize(8);
 		
-		//String totalCipher = "5F24DD35CC079BA9970DBA343DF81F5A444B28E091B8DF25";
+		String totalCipher = "5F24DD35CC079BA9970DBA343DF81F5A444B28E091B8DF25"; // my name is jwmoon
 		//String totalCipher ="950431B3C1CD1C534B6FE3B4BF9F33D34F9A4589307AB959";
 		//String totalCipher = "240148335AF2FD20D0C3A47A7AA89AFF9F58F952AF5A79AC";  // 평문: 한글도 되나요?
-		String totalCipher = "D4933AC620BF62064099FB4EF04B881CD117E2C94285D69F";  // 평문: 日本語テスト
+		//String totalCipher = "D4933AC620BF62064099FB4EF04B881CD117E2C94285D69F";  // 평문: 日本語テスト
 		
 		// 첫번째 블록의 평문값은 어떻게 구할 수 있지? 중간값은 구했지만 IV값은 모르잖아. 
 		// => 0 으로 채워진 이니셜벡터를 쓰니까 된다. 
