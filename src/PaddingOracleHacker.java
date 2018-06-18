@@ -130,7 +130,6 @@ public class PaddingOracleHacker {
 	}
 	
 	/**
-	 * 
 	 * 시도하고자 하는 padding 단수에 맞춘 요청 암호 블록을 리턴한다.
 	 * 	paddingVal 1인 경우 : 기본 값을 쓴다. 
 		paddingVal 2인 경우 : 
@@ -156,7 +155,7 @@ public class PaddingOracleHacker {
 				String val = ByteUtil.xor("0" + paddingVal, interValues.get(j));  // <-- 바꿀 값
 				
 				//System.out.println((j+1) + ") " + result.substring(targetOffset, targetOffset + 2) + " is replaced to (" 
-						//+ "0x0" + paddingVal +" ^ 0x" + interValues.get(j) + " = 0x" + val +")");
+				//		+ "0x0" + paddingVal +" ^ 0x" + interValues.get(j) + " = 0x" + val +")");
 				
 				String sub2 = result.substring(targetOffset+2);
 				result = sub1 + val + sub2;
@@ -244,13 +243,6 @@ public class PaddingOracleHacker {
 		hacker.setBlockSize(8);
 		
 		String totalCipher = "5F24DD35CC079BA9970DBA343DF81F5A444B28E091B8DF25"; // my name is jwmoon
-		//String totalCipher ="950431B3C1CD1C534B6FE3B4BF9F33D34F9A4589307AB959";
-		//String totalCipher = "240148335AF2FD20D0C3A47A7AA89AFF9F58F952AF5A79AC";  // 평문: 한글도 되나요?
-		//String totalCipher = "D4933AC620BF62064099FB4EF04B881CD117E2C94285D69F";  // 평문: 日本語テスト
-		
-		// 첫번째 블록의 평문값은 어떻게 구할 수 있지? 중간값은 구했지만 IV값은 모르잖아. 
-		// => 0 으로 채워진 이니셜벡터를 쓰니까 된다. 
-		// IV 를 랜덤한 값으로 쓰는 경우는 불가능할 것이다.
 		String hacked = hacker.hack(totalCipher);
 		System.out.println(hacked);
 	}

@@ -8,15 +8,15 @@
 <title>3DES Decryptor</title>
 </head>
 <body>
-<h1> hex 문자열을 msg파라메터로 전달해주세요. 3DES로 복호화를 시도합니다.</h1>
-msg 파라메터 값 : 
+<h1> hex文字列をmsgパラメーターで渡してください。 3DESで解読します。</h1>
+msg パラメーターの値 : 
 <%
 	String msg = request.getParameter("msg");
 	out.println(msg);
 	if (msg != null){
 %>
 <br>
-3DES로 복호화된 문자열 : 
+3DESで解読された文字列 : 
 <%
 	byte[] encrypted = ByteUtil.hexToBytes(msg);
 	String decrypted = TripleDes.decrypt(encrypted);
@@ -24,7 +24,7 @@ msg 파라메터 값 :
 %>
 
 <br>
-3DES로 복호화된 헥스 값 : 
+3DESで解読されたhex値 : 
 <%
 	String hexDecrypted = ByteUtil.bytesToHex(decrypted.getBytes()); 
 	//out.println(hexEncrypted);
